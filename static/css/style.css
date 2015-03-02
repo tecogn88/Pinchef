@@ -1,0 +1,50 @@
+/* @override http://2paginaweb.com.mx/pinchef/assets/css/style.css */
+
+/* @override http://2paginaweb.com.mx/pinchef/assets/css/style.css */
+
+/*
+Tutorial Name: Scroll To Top Then Fixed Navigation Effect With JQuery and CSS
+Description: Create a sticky navigation bar that remains fixed to the top after scroll
+Author: Stanislav Kostadinov
+Author URI: http://stanislav.it
+Version: 1.0.0 - 11.01.2014
+*/
+
+* {margin: 0; padding: 0;}
+
+a {text-decoration: none;}
+
+/* This class is added on scroll */
+.fixed {position: fixed;  top: 0; height: 70px;  z-index: 99; width: 100%; background-color: #fff !important; }
+.fixed .logo { width: 41px; height: 59px; overflow: hidden; background: url(../images/logo-2.jpg) no-repeat; margin-top: 5px; }
+.fixed .logo img { display:none;}
+
+
+/* Screens Settings */
+#screen1 {	
+	background: #43b29d;
+}
+
+#screen1 p {
+	padding-top: 200px;
+}
+
+#screen2 {
+	background: #efc94d;
+}
+
+#screen3 {
+	background: #e1793d;
+}
+
+@media only screen and (max-width: 520px) {
+
+	nav li {
+		padding: 24px 4px;
+	}
+
+	nav li a {
+		font-size: 14px;
+	}
+
+}

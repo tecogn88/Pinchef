@@ -1,0 +1,186 @@
+/* @override http://2paginaweb.com.mx/pinchef/assets/css/pinchef.css */
+
+/* @override http://2paginaweb.com.mx/pinchef/assets/css/pinchef.css */
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+h3 { font-weight: 800; font-size:  3em; color: #201333; }
+
+#top div.container a.logo.phone { display: none;}
+p { font-weight: 300; }
+
+ul.nav.navbar-nav li a { font-weight: 700; color: #201333; margin-top: 15px; }
+ul.nav.navbar-nav li a.bold { font-weight: 700; color: #201333; margin-top: 15px; }
+
+.logo { display: block; margin-left: auto; margin-right: auto; 	width: 170px; }
+ul.nav.navbar-nav.navbar-right { right: 0 !important; top: 0 ; }
+nav.collapse.navbar-collapse.bs-navbar-collapse { 	position: relative; }
+ ul.nav.navbar-nav { 	position: absolute; }
+
+header#top.navbar.navbar-static-top.bs-docs-nav { 	margin-bottom: -99px; 	background-color: transparent; }
+#carousel-example-generic div.carousel-inner div.item img { width: 100%; }
+
+#top h3 { 	text-align: center; margin-top: 50px; margin-bottom: 50px; }
+#top h3 span { color: #0babe6;}
+
+.purple { padding-top: 50px; 	padding-bottom: 50px; 	background: url(../images/patron-2.jpg) repeat; }
+
+h3.yellow { color: #fe8293; margin-top: 65px; }
+.purple { text-align: center; color: #fff; }
+.purple p { font-weight: 400; font-size: 1.1em;}
+
+.white { text-align: center; }
+h3.blue { color: #80d2f2; margin-top: 80px; }
+
+div.bottom { padding-top: 20px; padding-bottom: 20px; }
+h3.green { margin-top: 120px; color: #a6f09a;}
+
+.bottom div.col-xs-12.col-md-6 { text-align: center; }
+a.button.small { display: inline-block; width: 100px; margin-top: 0; margin-left: 5px; }
+
+a.button {
+	background: rgb(240,115,27); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(240,115,27,1) 0%, rgba(228,65,15,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,115,27,1)), color-stop(100%,rgba(228,65,15,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0731b', endColorstr='#e4410f',GradientType=0 ); /* IE6-9 */
+	color:#fff;
+	padding: 8px 15px;
+	margin-top: 20px;
+	display: block;
+	width: 200px;
+	border:#c44102 solid 1px;
+	-webkit-border-radius: 6px; 
+  	-moz-border-radius: 6px; 
+	border-radius: 6px; 
+}
+
+
+section a.button { margin-left: auto; margin-right: auto;}
+a.buttoncuenta { color: #fff !important; text-align: center; padding: 10px 16px !important; 	margin-top: 20px !important;
+	background-color: #170e27;
+	-webkit-border-radius: 6px; 
+  	-moz-border-radius: 6px; 
+	border-radius: 6px; 
+}
+
+input.codigo-postal { width: 150px; }
+.bottom input { height: 37px; margin-left: 5px; }
+h4 { color: #211432; font-weight:800; margin-top: 0; margin-bottom: 15px; }
+
+a.instagram { float: left; width: 28px; height: 28px; background-image: url(../images/icon-insta.jpg); margin-top: 45px; margin-right: 8px; }
+a.pinterest { float: left; width: 28px; height: 28px; background-image: url(../images/icon-pint.jpg); margin-top: 45px; margin-right: 8px; }
+a.youtube { float: left; width: 28px; height: 28px; background-image: url(../images/icon-ytb.jpg); margin-top: 45px; margin-right: 8px; }
+a.face { float: left; width: 28px; height: 28px; background-image: url(../images/icon-fb.jpg); margin-top: 45px; margin-right: 8px; }
+
+a.twitter { float: left; width: 28px; height: 28px; background-image: url(../images/icon-twt.jpg); margin-top: 45px; margin-right: 8px; }
+.bottom h4 { margin-top: 0px;}
+
+a#anchord { position: absolute;
+	bottom: 70px;
+	width: 100%;
+	text-align: center;
+}
+a.twitter:hover, a.face:hover, a.youtube:hover, a.pinterest:hover, a.instagram:hover {	background-position: 0 bottom; }
+footer {	background-color: #170e27; color: #fff; padding-top: 15px; padding-bottom: 15px; } 
+footer h4 { color: #fff; font-size: 15px; }
+
+ul.menu-footer { list-style-type: none; padding-left: 0; margin-bottom: 0;}
+footer li a { color: #fff; font-size: 13px;
+	font-style: italic;
+}
+
+div.carousel-caption { color: #fff; text-align: left; width: 370px; position: absolute; top: 290px; left: 60%; text-shadow:  none ; }
+div.carousel-caption h3 {  color: #fff; }
+div.carousel-caption p { font-size: 18px; font-weight: 400;}
+div.carousel-caption a.button { text-align: center; float: right; }
+
+section#inicio-top #carousel-example-generic { display: block; width: 260px; display: inline-block;
+	float: left; margin-left: 15px; }
+section#inicio-top { padding-top: 50px; padding-bottom: 50px; }
+div#contenido-top { width: 700px; display: block; margin-left: auto; margin-right: auto; 	height: 50px; }
+#inicio-top h3 { display:inline-block; margin-top: 0; margin-bottom: 0; float: left; }
+
+div#portada img { width: 100%;}
+#content div.container .col-xs-10.col-md-10,
+#content div.container .col-xs-8.col-md-8{ margin-top: -380px; background-color: #fff !important; z-index: 2; position: relative; padding: 25px; }
+section#content {	background: url(../images/patron-2.jpg) repeat 0; }
+
+#content div.container ol { padding-left: 20px; font-weight: 300;}
+#content div.container h1 { color: #:#201333;}
+h4 { font-weight: 400; margin-top: 25px; font-size: 22px; }
+
+div#accordion.panel-group { margin-top: 30px; }
+
+ h3.small-xd { font-weight: 300;
+	font-size: 25px;
+}
+
+h1.center-align { text-align: center;}
+h1.center-align span {font-weight: 300; font-size: 19px; color:#8ebd13 ;}
+
+div#image { text-align: center; margin-top: 35px; }
+.panel-heading h4 { margin-top: 0; margin-bottom: 0; font-size: 20px; }
+h4.number { border:#8ebd13 solid 2px; color:#8ebd13;	text-align: center; width: 50px; height: 50px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	line-height: 46px;
+}
+
+footer div.col-xs-6.col-md-4 p { margin-top: 20px;
+	font-size: 14px;
+}
+
+section#practico.purple h3,
+section#divertido.purple h3 { color: #fff; margin-top: 60px; }
+section#salud.white  h3 { margin-top: 90px; }
+
+.vertical .carousel-inner {
+  height: 100%;
+}
+
+.carousel.vertical .item {
+  -webkit-transition: 0.6s ease-in-out top;
+     -moz-transition: 0.6s ease-in-out top;
+      -ms-transition: 0.6s ease-in-out top;
+       -o-transition: 0.6s ease-in-out top;
+          transition: 0.6s ease-in-out top;
+}
+
+.carousel.vertical .active {
+  top: 0;
+}
+
+.carousel.vertical .next {
+  top: 100%;
+}
+
+.carousel.vertical .prev {
+  top: -100%;
+}
+
+.carousel.vertical .next.left,
+.carousel.vertical .prev.right {
+  top: 0;
+}
+
+.carousel.vertical .active.left {
+  top: -100%;
+}
+
+.carousel.vertical .active.right {
+  top: 100%;
+}
+
+.carousel.vertical .item {
+    left: 0;
+}
+
+
