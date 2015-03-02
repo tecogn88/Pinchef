@@ -4,6 +4,7 @@ from django.contrib import admin
 
 from .models import Receta
 from .models import Ingrediente
+from .models import Pedido
 
 class IngredienteInline(admin.StackedInline):
 	model = Ingrediente
@@ -18,10 +19,9 @@ class RecetaAdmin(admin.ModelAdmin):
 
 admin.site.register(Receta, RecetaAdmin)
 
+class PedidoAdmin(admin.ModelAdmin):
+	list_display = ('pk', 'fecha', 'status')
+	# search_fields = ('nombre', 'receta')
+	# list_editable = ('receta','nombre')
 
-# class IngredienteAdmin(admin.ModelAdmin):
-# 	list_display = ('pk','nombre', 'receta')
-# 	search_fields = ('nombre', 'receta')
-# 	list_editable = ('receta','nombre')
-
-# admin.site.register(Ingrediente, IngredienteAdmin)
+admin.site.register(Pedido, PedidoAdmin)

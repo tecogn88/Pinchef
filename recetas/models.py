@@ -32,3 +32,4 @@ class Ingrediente(models.Model):
 class Pedido(models.Model):
 	fecha=models.DateTimeField(auto_now=True)
 	status=models.IntegerField(max_length=11)
+	recetas=models.ManyToManyField(Receta,related_name='recetas')
