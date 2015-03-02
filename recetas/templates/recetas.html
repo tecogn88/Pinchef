@@ -3,23 +3,16 @@
 	<div class="container">
 		<div class="row">
 			{% for receta in recetas %}
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<div class="receta_img">
 					<img src="/media/{{receta.imagen}}">
 				</div>
-			<p>
-				Nombre: {{receta.nombre}}
-			</p>
-			<p>
-				Calorias: {{receta.calorias}}
-			</p>
-			<p>
-				Preparación: {{receta.descripcion}}
-			</p>
-			</div>
-				
+				<h3>{{receta.nombre}}</h3>
+				<p><b>Calorias:</b> {{receta.calorias}}</p>
+				<p><b>Preparación:</b></p>
+				<p>{{receta.descripcion}}</p>
+			</div>				
 			{% endfor %}
-
 		</div>
 	</div>
 {% endblock content %}
