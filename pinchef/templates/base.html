@@ -57,9 +57,9 @@
           <ul class="nav navbar-nav navbar-right">
             <!--<li><a class="bold" href="#">Entrar</a></li>-->
             {% if is_auth %}
-              <li>({{ nombre }}) <a class="buttoncuenta" href="#">Salir</a></li>
+              <li>({{ nombre }}) <a class="buttoncuenta" href="/singout">Salir</a></li>
             {% else %}
-              <li><a class="buttoncuenta" href="#">Entrar</a></li>
+              <li><a class="buttoncuenta" href="/singin">Entrar</a></li>
             {% endif %}
           </ul>
         </nav>

@@ -15,4 +15,5 @@ urlpatterns = patterns('',
     url(r'^receta/(?P<slug>\w+)/', 'recetas.views.receta_view', name='receta_view'),
     url(r'^singup/', 'usuarios.views.singup', name='singup'),
     url(r'^singin/', 'usuarios.views.singin', name='singin'),
+    url(r'^singout/', 'usuarios.views.singout', name='singout'),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
