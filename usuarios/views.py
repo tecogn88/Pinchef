@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.contrib.auth import login
 from django.contrib.auth import logout
 from .forms import UserCreationEmailForm, EmailAuthenticationForm
@@ -19,6 +20,8 @@ def singin(request):
 		login(request, form.get_user())
 
 	return render(request, 'singin.html', {'form': form})
+	return redirect('/')
 
 def singout(request):
     logout(request)
+    return redirect('/')

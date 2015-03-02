@@ -103,6 +103,7 @@ STATICFILES_DIRS = (
 )
 
 # backends
-# AUTHENTICATION_BACKENDS = (
-#     'usuarios.backends.EmailBackend',
-# )
+AUTHENTICATION_BACKENDS = (
+    'usuarios.backends.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)

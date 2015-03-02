@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="container">
+		<div class="row">
+			{% for receta in recetas %}
+
+
+		<p>
+			Nombre: {{receta.nombre}}
+		</p>
+		<p>
+			Tipo: {{receta.tipo}}
+		</p>
+		<p>
+			Imagen: {{receta.imagen}}
+		</p>
+		<p>
+			Preparación: {{receta.pasos}}
+		</p>
+				
+			{% endfor %}
+
+		</div>
+	</div>
+{% endblock content %}
