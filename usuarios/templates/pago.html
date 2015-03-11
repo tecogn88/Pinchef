@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div id="portada">
+      <img src="/static/images/slider-1.jpg">
+  </div>
+  <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-1 col-md-1"></div>  
+          <div class="col-xs-10 col-md-10">
+            <p>Forma de Pago</p>
+            <p>
+              <select id='forma' class='form-control'>
+                <option value='1'>Pago en Oxxo</option>
+                <option value='2'>Transferencia bancaria</option>
+                <option value='3'>Tarjeta de Crédito/Débito</option>
+              </select>
+            </p>
+            <div id="oxxo" style='display:none;'>
+            </div>
+            <div id="banco" style='display:none;'>
+            </div> 
+            <div id="tarjeta" style='display:none;'>
+              <form action="" method="POST" id="card-form">
+                {% csrf_token %}
+                <span class="card-errors"></span>
+                <div class="form-row">
+                  <label>
+                    <span>Nombre del tarjetahabiente</span>
+                    <input type="text" size="20" data-conekta="card[name]"/>
+                  </label>
+                </div>
+                <div class="form-row">
+                  <label>
+                    <span>Número de tarjeta de crédito</span>
+                    <input type="text" size="20" data-conekta="card[number]"/>
+                  </label>
+                </div>
+                <div class="form-row">
+                  <label>
+                    <span>CVC</span>
+                    <input type="text" size="4" data-conekta="card[cvc]"/>
+                  </label>
+                </div>
+                <div class="form-row">
+                  <label>
+                    <span>Fecha de expiración (MM/AAAA)</span>
+                    <input type="text" size="2" data-conekta="card[exp_month]"/>
+                  </label>
+                  <span>/</span>
+                  <input type="text" size="4" data-conekta="card[exp_year]"/>
+                </div>
+                <button type="submit">Suscribirse ahora!</button>
+              </form>
+            </div>
+          </div>
+        <div class="col-xs-1 col-md-1"></div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

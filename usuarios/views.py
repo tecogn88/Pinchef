@@ -25,3 +25,25 @@ def singin(request):
 def singout(request):
     logout(request)
     return redirect('/')
+
+def access(request):
+	form = UserCreationEmailForm(request.POST or None)
+
+	if form.is_valid():
+		form.save()
+
+	return render(request, 'access.html', {'form': form})
+
+def register(request):
+	form = UserCreationEmailForm(request.POST or None)
+
+	if form.is_valid():
+		form.save()
+
+	return render(request, 'register.html', {'form': form})
+
+def direccion(request):
+	return render(request, 'direccion.html')
+
+def pago(request):
+	return render(request, 'pago.html')

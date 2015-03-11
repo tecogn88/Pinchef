@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div id="portada">
+  		<img src="/static/images/slider-1.jpg">
+	</div>
+	<section id="content">
+  		<div class="container">
+    		<div class="row">
+    			<div class="col-xs-1 col-md-1"></div>  
+    			<div class="col-xs-10 col-md-10">
+    				<div class="row">
+    					<div class="col-md-3">
+							<form action='' method='post'>
+								{% csrf_token %}
+								{{form.as_p}}
+								<input type='submit' value='Continuar'>
+							</form>
+    					</div>
+    					<div class="col-md-4">
+    						<h4>Restricciones de Dieta</h4>
+    						<legend>¿Comes Carne de Res?</legend><input type='radio' name='dieta_res' value='1'>Si <input type='radio' name='dieta' value='0'>No <br>
+    						<legend>¿Comes Carne de Cerdo?</legend><input type='radio' name='dieta_cerdo' value='1'>Si <input type='radio' name='dieta' value='0'>No <br>
+    						<legend>¿Comes Pollo/Aves?</legend><input type='radio' name='dieta_pollo' value='1'>Si <input type='radio' name='dieta' value='0'>No <br>
+    						<legend>¿Comes Pescado?</legend><input type='radio' name='dieta_pescado' value='1'>Si <input type='radio' name='dieta' value='0'>No <br>
+    						<legend>¿Comes Mariscos?</legend><input type='radio' name='dieta_mariscos' value='1'>Si <input type='radio' name='dieta' value='0'>No <br>
+    						<legend>¿Comes Cordero?</legend><input type='radio' name='dieta_cordero' value='1'>Si <input type='radio' name='dieta' value='0'>No
+    					</div>
+    					<div class="col-md-3">
+    						<legend>Soy</legend><input type='radio' name='soy' value='vegetariano'>Vegetariano(a) <input type='radio' name='soy' value='vegano'>Vegano(a) <input type='radio' name='soy' value='ninguno'>Ninguno de los anteriores <br>
+    						<label>Dinos cualquier restricción adicional de dieta que tengas:</label>
+    						<textarea name='restriccion_adiocional' class='form-control' placeholder='Max. 150 caracteres'></textarea>
+    					</div>
+    				</div>
+				</div>
+				<div class="col-xs-1 col-md-1"></div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

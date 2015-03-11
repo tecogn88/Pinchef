@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div id="portada">
+  		<img src="/static/images/slider-1.jpg">
+	</div>
+	<section id="content">
+  		<div class="container">
+    		<div class="row">
+    			<div class="col-xs-1 col-md-1"></div>  
+    			<div class="col-xs-10 col-md-10">
+					<div class="col-md-4">
+						<p>Información de envíos</p>
+						<form id='form-cp'>
+							<fieldset>
+								<label>Calle y Número</label>
+								<input type='text' name='calle_num' class='form-control'>
+								<label>Colonia</label>
+								<select name='colonia' class='form-control'>
+									{% for i in range15 %}
+										<option value='{{i}}'>Colonia {{i}}</option>
+									{% endfor %}
+								</select>
+								<label>Delegación/Municipio</label>
+								<input type='text' name='municipio' class='form-control'>
+								<label>Estado</label>
+								<input name='estado' type='text' class='form-control'>
+								<label>Código Postal</label>
+								<select name='codigo' class='form-control'>
+									{% for i in range15 %}
+										<option value='{{i}}'>{{i}}{{i}}{{i}}{{i}}{{i}}</option>
+									{% endfor %}
+								</select>
+							</fieldset>
+						</form>
+					</div>
+					<div class="col-md-6">
+						<p>Horario para recibir el paquete.</p>
+						<div class="row">
+							<div class="col-md-6">
+								<label>Día:</label>
+								<select name='dia' class='form-control'>
+									<option value="Lunes">Lunes</option>
+									<option value="Martes">Martes</option>
+									<option value="Miércoles">Miércoles</option>
+									<option value="Jueves">Jueves</option>
+									<option value="Viernes">Viernes</option>
+								</select>
+							</div>
+							<div class="col-md-6">
+								<label>Hora:</label>
+								<select name='hora' class='form-control'>
+									{% for i in range18 %}
+										<option value='{{i}}:00'>{{i}}:00</option>
+									{% endfor %}
+								</select>
+							</div>
+							<div class="col-md-12">
+								<label>Haznos la entrega más fácil:</label>
+								<textarea name='mas_facil' class='form-control' placeholder='Escribe  referencias y/o tips para ayudar al repartidor a entregarte tu pedido siempre a tiempo… max 150 caracteres'></textarea>
+							</div>
+						</div>
+					</div>
+					<p><a href="#" class='btn btn-default'>Continuar ></a></p>
+				</div>
+				<div class="col-xs-1 col-md-1"></div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

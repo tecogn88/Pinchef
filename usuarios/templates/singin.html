@@ -1,12 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-	<div class="row">
+<div id="portada">
+  <img src="assets/images/slider-1.jpg">
+</div>
+<section id="content">
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-1 col-md-1"> 
+    </div>  
+    <div class="col-xs-10 col-md-10"> 
 		<form action='' method='post'>
 			{% csrf_token %}
 			{{form.as_p}}
 			<input type='submit' value='Entrar'>
 		</form>
 	</div>
+    </div>
+  </div>
+</section>
+<div class="bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <img src="assets/images/img-bottom.jpg">
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <h4>Suscríbete para recibir noticias</h4>
+        <input placeholder="ejemplo@email.com" type="text">
+        <input class="codigo-postal" placeholder="Código postal" type="text">
+        <a class="button small" href="#">Enviar</a>
+      </div>  
+      <div class="col-xs-12 col-md-3">
+        <a class="instagram" href="http://instagram.com/pinchefmx/" target="_blank"></a>
+        <a class="pinterest" href="https://www.pinterest.com/PinChefmx/" target="_blank"></a>
+        <a class="youtube" href="#"></a>
+        <a class="face" href="https://www.facebook.com/profile.php?id=100007651907991" target="_blank"></a>
+        <a class="twitter" href="https://twitter.com/pinchefmx" target="_blank"></a>
+      </div>  
+    </div>
+  </div>
 </div>
 {% endblock content %}

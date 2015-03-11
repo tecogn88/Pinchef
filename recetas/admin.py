@@ -20,8 +20,9 @@ class RecetaAdmin(admin.ModelAdmin):
 admin.site.register(Receta, RecetaAdmin)
 
 class PedidoAdmin(admin.ModelAdmin):
-	list_display = ('pk', 'fecha', 'status')
-	# search_fields = ('nombre', 'receta')
+	list_display = ('pk', 'fecha', 'status', 'usuario')
+	search_fields = ('usuario', 'status', 'fecha')
+	list_filter= ('usuario', 'status', 'fecha')
 	# list_editable = ('receta','nombre')
 
 admin.site.register(Pedido, PedidoAdmin)

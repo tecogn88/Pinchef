@@ -1,5 +1,6 @@
 from django.db import models
 from autoslug import AutoSlugField
+from usuarios.models import Usuario
 
 # Create your models here.
 
@@ -30,6 +31,7 @@ class Ingrediente(models.Model):
 		return self.nombre
 
 class Pedido(models.Model):
+	usuario=models.ForeignKey(Usuario, related_name='usuarios')
 	fecha=models.DateTimeField(auto_now=True)
 	status=models.IntegerField(max_length=11)
 	recetas=models.ManyToManyField(Receta,related_name='recetas')

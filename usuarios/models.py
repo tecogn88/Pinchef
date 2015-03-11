@@ -1,12 +1,14 @@
 # -*- encoding: utf-8 -*-
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
 class Usuario(models.Model):
 	nombre=models.CharField(max_length=255)
 	apellidos=models.CharField(max_length=255,blank=True)
-	email=models.CharField(max_length=255)
+	username=models.CharField(max_length=100)
+	password=models.CharField(max_length=50)
 	telefono=models.CharField(max_length=255)
 	status=models.IntegerField(max_length=11)
 	tipo=models.IntegerField(max_length=11)
@@ -22,3 +24,23 @@ class Direccion(models.Model):
 	estado=models.CharField(max_length=255)
 	cp=models.CharField(max_length=255,verbose_name='Código postal')
 	usuario=models.ForeignKey(Usuario)
+
+class Membresia(models.Model):
+	usuario=models.ForeignKey(Usuario)
+	status=models.IntegerField(max_length=11)
+
+class Preferencia(models.Model):
+	TYPE_CHOICES = (
+       ('vegetariano', 'Vegetariano(a)'),
+       ('vegano', 'Vegano(a)'),
+       ('ninguno', 'Ninguno de los Anteriores'),
+    )
+	res=models.BooleanField('¿Come Carne de Res?', default=False)
+	cerdo=models.BooleanField('¿Come Carne de Cerdo?', default=False)	
+	pollo=models.BooleanField('¿Come Pollo/Aves?', default=False)
+	pescado=models.BooleanField('¿Come Pescado?', default=False)
+	mariscos=models.BooleanField('¿Come Mariscos', default=False)
+	cordero=models.BooleanField('¿Come Cordero?', default=False)
+	alimentacion=models.CharField(max_length=100, choices=TYPE_CHOICES, default='ninguno')
+	restriccion=models.TextField(blank=True)
+	usuario=models.OneToOneField(Usuario)

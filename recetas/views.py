@@ -11,4 +11,36 @@ def receta_view(request, slug):
 
 def recetas(request):
 	recetas = Receta.objects.all()
-	return render(request, 'recetas.html', {'recetas': recetas})
+	pedido = request.session.get('pedido', {})
+	if pedido:
+		pedido = pedido
+	else: 
+		pedido = False
+
+	return render(request, 'recetas.html', {'recetas': recetas, 'pedido': pedido})
+
+def pedir(request):
+	if request.method == 'POST':
+		pedido = request.session.get('pedido', {})
+		item = int(request.POST.get('id'))
+		p = list(pedido)
+		# if item in p:
+		# 	return HttpResponse('0')
+		# else:
+		p.append(item)
+		request.session['pedido'] = p
+		return HttpResponse('1')
+
+def remover(request):
+	if request.method == 'POST':
+		item = int(request.POST.get('id'))
+		p = request.session['pedido']
+		if item in p:
+			p.remove(item)
+			request.session['pedido'] = p
+			return HttpResponse('1')
+		else:
+			return HttpResponse('0')
+
+
+
