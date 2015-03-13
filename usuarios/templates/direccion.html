@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-	<div id="portada">
-  		<img src="/static/images/slider-1.jpg">
-	</div>
-	<section id="content">
+	
+	<section id="register">
   		<div class="container">
     		<div class="row">
     			<div class="col-xs-1 col-md-1"></div>  
     			<div class="col-xs-10 col-md-10">
-					<div class="col-md-4">
+    				<form action='' method='post'>
+							{% csrf_token %}
+							{{form.as_p}}
+							<input class="boton" type='submit' value='Continuar'>
+						</form>
+					<!--<div class="col-md-4">
 						<p>Información de envíos</p>
 						<form id='form-cp'>
 							<fieldset>
@@ -60,10 +63,32 @@
 							</div>
 						</div>
 					</div>
-					<p><a href="#" class='btn btn-default'>Continuar ></a></p>
+					<p><a href="#" class='btn btn-default'>Continuar ></a></p>-->
 				</div>
 				<div class="col-xs-1 col-md-1"></div>
 			</div>
 		</div>
 	</section>
+	<div class="bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <img src="{{STATIC_URL}}images/img-bottom.jpg">
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <h4>Suscríbete para recibir noticias</h4>
+        <input placeholder="ejemplo@email.com" type="text">
+        <input class="codigo-postal" placeholder="Código postal" type="text">
+        <a class="button small" href="#">Enviar</a>
+      </div>  
+      <div class="col-xs-12 col-md-3">
+        <a class="instagram" href="http://instagram.com/pinchefmx/" target="_blank"></a>
+        <a class="pinterest" href="https://www.pinterest.com/PinChefmx/" target="_blank"></a>
+        <a class="youtube" href="#"></a>
+        <a class="face" href="https://www.facebook.com/profile.php?id=100007651907991" target="_blank"></a>
+        <a class="twitter" href="https://twitter.com/pinchefmx" target="_blank"></a>
+      </div>  
+    </div>
+  </div>
+</div>  
 {% endblock content %}

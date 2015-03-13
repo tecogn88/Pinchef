@@ -160,7 +160,6 @@
           $('#message').show();
           $('#message').addClass('alert-warning');
           $('#message').html('La receta ya esta agregada al pedido');
-          setTimeout("refreshPage();", 3000);
         }
       })
       .fail(function(data) {
@@ -171,7 +170,6 @@
       $('#message').show();
       $('#message').addClass('alert-danger');
       $('#message').html('Sólo puede agregar 3 recetas al pedido');
-      setTimeout("refreshPage();", 3000);
     }
   
   }

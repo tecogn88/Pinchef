@@ -1,25 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
-	<div id="portada">
-  		<img src="/static/images/slider-1.jpg">
-	</div>
-	<section id="content">
+	
+	<section id="recetas">
   		<div class="container">
     		<div class="row">
     			<div class="col-xs-1 col-md-1"></div>  
-    			<div class="col-xs-10 col-md-10">
+    			<div class="col-xs-10 col-md-10" id="bg-white">
+    				<h1 class="center-align">Menú de la semana<br>
+    					<span>Selecciona las 3 recetas que más se te antojen para<br>recibir la siguiente semana</span></h1>
 					{% if recetas %}
 						<div class="col-md-12">
 							<div class="alert " style='display:none' id='message'></div>
 							{% if request.session.pedido %}
-								<p class='pull-right'><a href="/access" class='btn btn-primary'>Continuar</a></p>
-								Pedido: {{pedido}}
+								<div class="row">
+									<div class="col-md-4"></div>
+									<div class="col-md-4">
+										<div class="well">
+											<p>
+												<b>Tiene {{ request.session.pedido|length }} Receta(s) en el pedido</b><br>
+												<small>{% for receta in recetas %}{% if receta.id in pedido %}<span class='label label-default'>{{receta.nombre}}</span> {% endif %}{% endfor %}</small>
+											</p>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<p class='pull-right'><a href="/access" class='btn btn-primary'>Continuar</a></p>
+									</div>
+								</div>
 							{% endif %}
 							<p><input type='hidden' name='items_pedido' value='{{ request.session.pedido|length }}'></p>
 						</div>
 						{% for receta in recetas %}
-							<div class="col-md-4">
+							
 								<div class="receta">
+									<h3 class="receta-titulo">{{receta.nombre}}</h3>
 									{% if receta.id in pedido %}
 										<div class="well">
 										<p class='pull-right'><a href="#" onclick='remover({{receta.id}});'><span class="glyphicon glyphicon-remove"></span></a></p>
@@ -28,18 +41,20 @@
 										<p class='pull-left'><a href="#" onclick='pedir({{receta.id}});'><span class="glyphicon glyphicon-plus"></span></a></p>
 										<img src="/media/{{receta.imagen}}" width='230px'>
 									</div>
-									<h3>{{receta.nombre}}</h3>
-									<p><b>Calorias:</b> {{receta.calorias}}</p>
-									<p><b>Preparación:</b></p>
-									<p>{{receta.descripcion}}</p>
-									{% if not receta.id in pedido %}
-										<p><a href="#" class="btn btn-warning" onclick='pedir({{receta.id}});'>Agregar al pedido</a></p>
-									{% else %}
-										<p><a href="#" class="btn btn-danger" onclick='remover({{receta.id}});'><span class="glyphicon glyphicon-remove"></span> Remover del pedido</a></p>
-										</div>
-									{% endif %}
+									<div class="receta-container">
+										
+										<h4 id="calorias">Calorias:<span>{{receta.calorias}}</span></h4>
+										<h4 id="preparacion">Preparación:</h4>
+										<p>{{receta.descripcion}}</p>
+										{% if not receta.id in pedido %}
+											<p><a href="#" class="btn btn-warning" onclick='pedir({{receta.id}});'>Agregar al pedido</a></p>
+										{% else %}
+											<p><a href="#" class="btn btn-danger" onclick='remover({{receta.id}});'><span class="glyphicon glyphicon-remove"></span> Remover del pedido</a></p>
+											</div>
+										{% endif %}
+									</div>
 								</div>
-							</div>				
+										
 						{% endfor %}
 					{% endif %}
 				</div>
@@ -47,4 +62,26 @@
 			</div>
 		</div>
 	</section>
+	<div class="bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <img src="{{STATIC_URL}}images/img-bottom.jpg">
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <h4>Suscríbete para recibir noticias</h4>
+        <input placeholder="ejemplo@email.com" type="text">
+        <input class="codigo-postal" placeholder="Código postal" type="text">
+        <a class="button small" href="#">Enviar</a>
+      </div>  
+      <div class="col-xs-12 col-md-3">
+        <a class="instagram" href="http://instagram.com/pinchefmx/" target="_blank"></a>
+        <a class="pinterest" href="https://www.pinterest.com/PinChefmx/" target="_blank"></a>
+        <a class="youtube" href="#"></a>
+        <a class="face" href="https://www.facebook.com/profile.php?id=100007651907991" target="_blank"></a>
+        <a class="twitter" href="https://twitter.com/pinchefmx" target="_blank"></a>
+      </div>  
+    </div>
+  </div>
+</div>  
 {% endblock content %}

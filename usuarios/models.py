@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -18,16 +19,14 @@ class Usuario(models.Model):
 
 class Direccion(models.Model):
 	calle=models.CharField(max_length=255)
-	numero=models.CharField(max_length=255)
 	colonia=models.CharField(max_length=255)
-	ciudad=models.CharField(max_length=255)
+	municipio=models.CharField(max_length=255)
 	estado=models.CharField(max_length=255)
 	cp=models.CharField(max_length=255,verbose_name='Código postal')
-	usuario=models.ForeignKey(Usuario)
-
-class Membresia(models.Model):
-	usuario=models.ForeignKey(Usuario)
-	status=models.IntegerField(max_length=11)
+	dia=models.CharField(max_length=255)
+	hora=models.CharField(max_length=255)
+	referencias=models.TextField(blank=True)
+	usuario=models.OneToOneField(User)
 
 class Preferencia(models.Model):
 	TYPE_CHOICES = (
@@ -43,4 +42,4 @@ class Preferencia(models.Model):
 	cordero=models.BooleanField('¿Come Cordero?', default=False)
 	alimentacion=models.CharField(max_length=100, choices=TYPE_CHOICES, default='ninguno')
 	restriccion=models.TextField(blank=True)
-	usuario=models.OneToOneField(Usuario)
+	usuario=models.OneToOneField(User)

@@ -2,15 +2,8 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Usuario
 from .models import Direccion
-from .models import Membresia
 from .models import Preferencia
-
-class UsuarioAdmin(admin.ModelAdmin):
-	list_display = ('pk', 'nombre', 'status')
-
-admin.site.register(Usuario, UsuarioAdmin)
 
 class DireccionAdmin(admin.ModelAdmin):
 	list_display = ('usuario', 'cp')

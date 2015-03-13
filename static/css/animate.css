@@ -1,5 +1,6 @@
-/* @override http://2paginaweb.com.mx/pinchef/assets/css/animate.css */
+/* @override http://104.131.97.51/static/css/animate.css */
 
+/* @override http://2paginaweb.com.mx/pinchef/assets/css/animate.css */
 
 @charset "UTF-8";
 /*!
@@ -8,7 +9,9 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 Copyright (c) 2014 Daniel Eden
 */
+div.receta:hover .receta-container, 
 a#anchord,
+header#top.navbar.navbar-static-top.bs-docs-nav .logo,
 header#top.navbar.navbar-static-top.bs-docs-nav.fixed .logo ,
 .animated {
   -webkit-animation-duration: 1s;
@@ -557,12 +560,13 @@ a#anchord,
             transform: scale3d(1, 1, 1);
   }
 }
+
 header#top.navbar.navbar-static-top.bs-docs-nav.fixed .logo, 
 .bounceIn {
   -webkit-animation-name: bounceIn;
           animation-name: bounceIn;
-  -webkit-animation-duration: .75s;
-          animation-duration: .75s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
 }
 
 @-webkit-keyframes bounceInDown {
@@ -633,6 +637,7 @@ header#top.navbar.navbar-static-top.bs-docs-nav.fixed .logo,
   }
 }
 
+header#top.navbar.navbar-static-top.bs-docs-nav .logo,
 .bounceInDown {
   -webkit-animation-name: bounceInDown;
           animation-name: bounceInDown;
@@ -792,8 +797,8 @@ header#top.navbar.navbar-static-top.bs-docs-nav.fixed .logo,
 
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 3000px, 0);
-            transform: translate3d(0, 3000px, 0);
+    -webkit-transform: translate3d(0, 1000px, 0);
+            transform: translate3d(0, 1000px, 0);
   }
 
   60% {
@@ -851,7 +856,7 @@ header#top.navbar.navbar-static-top.bs-docs-nav.fixed .logo,
             transform: translate3d(0, 0, 0);
   }
 }
-
+div.receta:hover .receta-container,
 .bounceInUp {
   -webkit-animation-name: bounceInUp;
           animation-name: bounceInUp;

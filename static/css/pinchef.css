@@ -1,6 +1,7 @@
-/* @override http://2paginaweb.com.mx/pinchef/assets/css/pinchef.css */
+/* @override http://104.131.97.51/static/css/pinchef.css */
 
-/* @override http://2paginaweb.com.mx/pinchef/assets/css/pinchef.css */
+/* @override http://104.131.97.51/static/css/pinchef.css */
+
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -9,8 +10,11 @@ body {
 
 h3 { font-weight: 800; font-size:  3em; color: #201333; }
 
-#top div.container a.logo.phone { display: none;}
-p { font-weight: 300; }
+#top div.container a.logo.phone { display: none;
+}
+
+div.white-content p { text-align: justify; }
+p { font-weight: 300;}
 
 ul.nav.navbar-nav li a { font-weight: 700; color: #201333; margin-top: 15px; }
 ul.nav.navbar-nav li a.bold { font-weight: 700; color: #201333; margin-top: 15px; }
@@ -26,7 +30,6 @@ header#top.navbar.navbar-static-top.bs-docs-nav { 	margin-bottom: -99px; 	backgr
 #top h3 { 	text-align: center; margin-top: 50px; margin-bottom: 50px; }
 #top h3 span { color: #0babe6;}
 
-.purple { padding-top: 50px; 	padding-bottom: 50px; 	background: url(../images/patron-2.jpg) repeat; }
 
 h3.yellow { color: #fe8293; margin-top: 65px; }
 .purple { text-align: center; color: #fff; }
@@ -40,6 +43,36 @@ h3.green { margin-top: 120px; color: #a6f09a;}
 
 .bottom div.col-xs-12.col-md-6 { text-align: center; }
 a.button.small { display: inline-block; width: 100px; margin-top: 0; margin-left: 5px; }
+
+#login div.container div.row div.col-xs-10.col-md-10 form { width: 400px; margin: 50px auto; }
+#login input { width: 100%; height: 50px; margin-bottom: 10px; }
+#login input {
+	background: rgb(240,115,27); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(240,115,27,1) 0%, rgba(228,65,15,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,115,27,1)), color-stop(100%,rgba(228,65,15,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0731b', endColorstr='#e4410f',GradientType=0 ); /* IE6-9 */
+	color:#fff;
+	padding: 8px 15px;
+	margin-top: 20px;
+	display: block;
+	width: 100%;
+	border:#c44102 solid 1px;
+	-webkit-border-radius: 6px; 
+  	-moz-border-radius: 6px; 
+	border-radius: 6px; 
+}
+
+#login div.container  input.form-control { background-color: #fff; background-image: none; border: none; }
+#login div.container div.row div.col-xs-10.col-md-10 form.center-align a.button.small { width: 100%; margin-left: 0; height: 45px;
+	margin-top: 30px; line-height: 30px; }
+textarea.form-control { margin-top: 20px; }
+input#id_password { background: #fff url(../images/lock.png) no-repeat 10px center; padding-left: 35px; border: none; margin-bottom: 35px; }
+input#id_email { background: #fff url(../images/user.png) no-repeat 10px center; padding-left: 35px; border: none;}
+
 
 a.button {
 	background: rgb(240,115,27); /* Old browsers */
@@ -60,16 +93,19 @@ a.button {
   	-moz-border-radius: 6px; 
 	border-radius: 6px; 
 }
+a.button:hover { text-decoration: none; background-color: #df440c; background-image: none; }
 
 
 section a.button { margin-left: auto; margin-right: auto;}
 a.buttoncuenta { color: #fff !important; text-align: center; padding: 10px 16px !important; 	margin-top: 20px !important;
-	background-color: #170e27;
+	background-color: #271a3f;
 	-webkit-border-radius: 6px; 
   	-moz-border-radius: 6px; 
 	border-radius: 6px; 
 }
-
+a.buttoncuenta:hover {
+	background-color: #281b3d !important;
+}
 input.codigo-postal { width: 150px; }
 .bottom input { height: 37px; margin-left: 5px; }
 h4 { color: #211432; font-weight:800; margin-top: 0; margin-bottom: 15px; }
@@ -96,10 +132,12 @@ footer li a { color: #fff; font-size: 13px;
 	font-style: italic;
 }
 
-div.carousel-caption { color: #fff; text-align: left; width: 370px; position: absolute; top: 290px; left: 60%; text-shadow:  none ; }
-div.carousel-caption h3 {  color: #fff; }
-div.carousel-caption p { font-size: 18px; font-weight: 400;}
-div.carousel-caption a.button { text-align: center; float: right; }
+div.texto { color: #fff; text-align: left; width: 370px; position: absolute; top: 290px; left: 60%; text-shadow:  none ; }
+div.texto h3 {  color: #fff; }
+div.texto p { font-size: 18px; font-weight: 400;}
+div.texto a.button { text-align: center; float: right; }
+div.top-imagen { position:relative; }
+div.top-imagen img { width:  100%; }
 
 section#inicio-top #carousel-example-generic { display: block; width: 260px; display: inline-block;
 	float: left; margin-left: 15px; }
@@ -109,7 +147,9 @@ div#contenido-top { width: 700px; display: block; margin-left: auto; margin-righ
 
 div#portada img { width: 100%;}
 #content div.container .col-xs-10.col-md-10,
-#content div.container .col-xs-8.col-md-8{ margin-top: -380px; background-color: #fff !important; z-index: 2; position: relative; padding: 25px; }
+#content div.container .col-xs-8.col-md-8{ background-color: #fff !important; z-index: 2; position: relative; padding: 25px; margin-top: 150px;
+	margin-bottom: 150px; }
+
 section#content {	background: url(../images/patron-2.jpg) repeat 0; }
 
 #content div.container ol { padding-left: 20px; font-weight: 300;}
@@ -123,11 +163,11 @@ div#accordion.panel-group { margin-top: 30px; }
 }
 
 h1.center-align { text-align: center;}
-h1.center-align span {font-weight: 300; font-size: 19px; color:#8ebd13 ;}
+h1.center-align span {font-weight: 300; font-size: 20px; color:#8ebd13 ; display: block; line-height: 24px; margin-bottom: 20px; margin-top: 10px; }
 
 div#image { text-align: center; margin-top: 35px; }
 .panel-heading h4 { margin-top: 0; margin-bottom: 0; font-size: 20px; }
-h4.number { border:#8ebd13 solid 2px; color:#8ebd13;	text-align: center; width: 50px; height: 50px;
+h4.number { text-align: center; width: 50px; height: 50px; background-color:#201333; color:#fff;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
@@ -138,14 +178,16 @@ footer div.col-xs-6.col-md-4 p { margin-top: 20px;
 	font-size: 14px;
 }
 
+section#divertido.purple { background: url(../images/divertido-bg.jpg) no-repeat; background-size: 100%; height: 580px; color: #646464;}
+section#salud #carousel-example-generic { height: 580px; overflow:hidden; }
+section#practico.purple { background: url(../images/practico-bg.jpg) no-repeat; background-size:100%; height: 580px; color: #120b1e; }
+
+div.carousel-caption { position: absolute; bottom: 240px; width: 440px; left: 10%; color: #170e27; text-shadow: none; }
 section#practico.purple h3,
-section#divertido.purple h3 { color: #fff; margin-top: 60px; }
+section#divertido.purple h3 { margin-top: 150px; }
 section#salud.white  h3 { margin-top: 90px; }
 
-.vertical .carousel-inner {
-  height: 100%;
-}
-
+.vertical .carousel-inner {  height: 100%; }
 .carousel.vertical .item {
   -webkit-transition: 0.6s ease-in-out top;
      -moz-transition: 0.6s ease-in-out top;
@@ -182,5 +224,176 @@ section#salud.white  h3 { margin-top: 90px; }
 .carousel.vertical .item {
     left: 0;
 }
+
+/**************** Interiores *******************/
+
+section#comofunciona { background-color:#201333; height: 320px; color: #fff;}
+section#comofunciona h1 { margin-top: 110px; }
+section#comofunciona h1 span { color:#fff; font-size: 17px; line-height: 22px; display: block; margin-top: 15px; }
+.white-content { background-color:#fff; padding: 30px 20px; }
+
+section#terminos div.col-xs-10.col-md-10,
+#faqs div.col-xs-10.col-md-10,
+#comofunciona div.col-xs-10.col-md-10 {margin-top: 140px; margin-bottom: 120px; padding-top: 39px; background: url(../images/top-cont.png) no-repeat;
+	padding-left: 0; 	padding-right: 0; }
+
+section#terminos .bottom-contenido,
+section#faqs .bottom-contenido,
+section#comofunciona .bottom-contenido { background-image: url(../images/bottom-cnt.png); width: 100%; height: 25px; display: block; }
+section#faqs { 	background: url(../images/bg-faqs.jpg) no-repeat fixed ; background-size: 100%; }
+#bottom-anotacion { float: none; padding: 10px 15px; margin: 25px auto; background-color:#dbdbdb; }
+#bottom-anotacion h4 { 	margin-top: 0; }
+
+section#terminos { 	background: url(../images/bg-terminos.jpg) no-repeat fixed; background-size: 100%; }
+#terminos div.container div.row div.col-xs-10.col-md-10 div.white-content ol { 	padding-left: 25px; }
+section#metodos { color: #fff; padding-top: 90px; padding-bottom: 90px; background-color: #201333; }
+#metodos div.container div.row h1.center-align span { color: #fff; line-height: 21px; font-size: 17px; padding-top: 15px; display: block; 
+	margin-bottom: 55px; }
+
+#metodos div.container div.row div.col-xs-12.col-md-10 div.left { width: 48%; float: left; margin-top: 35px; color: #fff;}
+#metodos div.container div.row div.col-xs-12.col-md-10 div.right { float: right; width: 48%; margin-top: 35px; }
+
+#metodos div.container div.row div.col-xs-12.col-md-10 div.right h4,
+#metodos div.container div.row div.col-xs-12.col-md-10 div.left h4 { color: #fff;}
+
+#metodos div.container div.row div.col-xs-12.col-md-10 table.table.table-bordered.table-striped tbody tr { background-color: #170e27; }
+table,
+.table-striped tbody tr td,
+th.text-nowrap { border: none !important; font-weight: 300; vertical-align: middle !important;}
+#metodos div.container div.row div.col-xs-12.col-md-10 table.table.table-bordered.table-striped tbody tr { 	border-top: 1px solid #2c1e45; }
+#metodos div.container div.row div.col-xs-12.col-md-10 table.table.table-bordered.table-striped tbody tr td img {  margin-top: 20px; margin-bottom: 20px; }
+
+.col-md-3 img.pasos-img { text-align: right; margin-left: auto; margin-top: 170px; float: right; }
+section#paso-1 { background: url(../images/slider-1.jpg) no-repeat ; background-size: 100%; color: #fff; height: 500px;}
+section#paso-3 h3, 
+section#paso-1 h3 { color: #fff; font-size: 35px; font-weight: 300; margin-top: 180px; }
+section#paso-3 h3 span, 
+section#paso-1 h3 span { background-color:#fff; color: #170e27; font-size: 17px; padding: 2px 5px; }
+section#paso-2 h3 {  font-size: 35px; font-weight: 300; margin-top: 180px; }
+section#paso-2 h3 span { background-color:#170e27; color: #fff; font-size: 17px; padding: 2px 5px; }
+section#paso-2 { background-color:#fff; height: 500px; }
+
+#blanco-fondo { background-color: #fff; margin-top: 60px; color: #120b1e; padding: 15px; }
+#blanco-fondo h4 { 	margin-top: 0; } 
+section#paso-3 {  height: 500px; color: #fff;background: url(../images/bg-terminos.jpg) no-repeat; background-size:100%; } 
+h3.desktop-no { display:none; }	
+section#login { background-color: #170e27; color: #fff;	padding-top: 125px; padding-bottom: 125px; text-align: center; }
+
+
+/************************************* hover efect recetas **************************************/
+
+
+div.receta { width: 48%; float: left; display: inline-block; position:relative; height: 350px; overflow: hidden; margin-right: 2%; margin-bottom: 20px; }
+
+h4#calorias { background: url(../images/calorias.png) no-repeat; padding-left: 20px; font-weight: 700; margin-bottom: 0; text-align: left; }
+h4#preparacion { margin-top: 10px; text-align: left; }
+h4#calorias span { font-weight: 300; margin-left: 15px; }
+
+.receta p.pull-right { position:absolute; right: 15px; top: 15px;	z-index: 900; }
+.receta p.pull-left { position:absolute; left: 15px; top: 15px;	z-index: 900; }
+div.receta img { width: 100%; }
+.receta-container { position: absolute; left: 0; bottom: -200%; background-color: #fff; padding: 15px; width: 100%; text-align: left; }
+div.receta:hover .receta-container { top: 0; }
+section#recetas { background-color: #170e27; padding-top: 125px; padding-bottom: 125px; text-align: center; }
+div#bg-white.col-xs-10.col-md-10 { background-color:#fff; padding: 15px; }
+
+section#register { background-color: #170e27; padding-top: 150px; padding-bottom: 150px; color: #fff;}
+section#register h4 { color: #fff; margin-bottom: 60px; text-align: center; }
+
+section#register input#acess_email.form-control { height: 45px; width: 280px; float: left; margin-right: 10px; }
+section#register input.form-control { height: 45px; width: 130px; 	float: left; }
+#form-cp fieldset input.btn.btn-default { float: right; height: 45px; width: 110px;
+	background: rgb(240,115,27); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(240,115,27,1) 0%, rgba(228,65,15,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,115,27,1)), color-stop(100%,rgba(228,65,15,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0731b', endColorstr='#e4410f',GradientType=0 ); /* IE6-9 */
+	color:#fff;
+	padding: 8px 15px;
+	display: block;
+	border:#c44102 solid 1px;
+	-webkit-border-radius: 6px; 
+  	-moz-border-radius: 6px; 
+	border-radius: 6px;
+}
+
+#log p a.btn.btn-default {
+	background: rgb(240,115,27); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(240,115,27,1) 0%, rgba(228,65,15,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,115,27,1)), color-stop(100%,rgba(228,65,15,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0731b', endColorstr='#e4410f',GradientType=0 ); /* IE6-9 */
+	color:#fff;
+	padding: 8px 15px;
+	display: block;
+	border:#c44102 solid 1px;
+	-webkit-border-radius: 6px; 
+  	-moz-border-radius: 6px; 
+	border-radius: 6px;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+section#register form,
+div#registro.row { width: 600px; margin-left: auto; margin-right: auto;}
+div#registro.row input { width:  100%; height: 45px; margin-bottom: 5px; border: none;
+	-webkit-border-radius: 6px; 
+  	-moz-border-radius: 6px; 
+	border-radius: 6px;
+}
+
+div#registro.row input#id_email { background-image: none; padding-left: 0; }
+div#registro.row label { font-weight: 300;}
+input#id_cordero, input#id_mariscos, input#id_pescado, input#id_pollo, input#id_cerdo, 
+input#id_res { width: 20px !important; height: 20px !important; float: left; }
+
+select#id_alimentacion { width: 250px;
+	margin-left: 15px;
+}
+textarea#id_restriccion { width: 100%; margin-bottom: 20px; color: #000; padding: 15px; }
+#register input.boton,
+#registro form input {
+	background: rgb(240,115,27); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(240,115,27,1) 0%, rgba(228,65,15,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,115,27,1)), color-stop(100%,rgba(228,65,15,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(240,115,27,1) 0%,rgba(228,65,15,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0731b', endColorstr='#e4410f',GradientType=0 ); /* IE6-9 */	
+	border: none;
+}
+
+div#registro.row #id_password2, div#registro.row #id_password1, div#registro.row #id_username, div#registro.row #id_email, 
+div#registro.row #id_last_name, div#registro.row #id_first_name { background-color:#fff !important; background-image: none; color:#000; padding-left: 10px !important;}
+
+section#register form input { width:  100%; height: 45px;
+	-webkit-border-radius: 6px; 
+  	-moz-border-radius: 6px; 
+	border-radius: 6px;
+}
+
+section#login textarea { width:  100%; padding: 10px; }
+
+section#login input#id_municipio,
+section#login input#id_estado,
+section#login input#id_nombre { background-color:#fff ; background-image: none; border: none; }
+
+section#register label { font-weight: 300;}
+section#register textarea#id_referencias { width: 100%; }
+
+div.receta h3.receta-titulo { font-size: 26px !important;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+
 
 
