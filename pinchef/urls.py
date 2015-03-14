@@ -31,4 +31,5 @@ urlpatterns = patterns('',
     url(r'^register/', 'usuarios.views.register', name='register'),
     url(r'^direccion/', 'usuarios.views.direccion', name='direccion'),
     url(r'^pago/', 'usuarios.views.pago', name='pago'),
+    url(r'^suscripciones/', include('suscripciones.urls', namespace='suscripciones', app_name='suscripciones')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class Receta(models.Model):
 	nombre=models.CharField(max_length=255)
-	slug=AutoSlugField(unique=True, populate_from='nombre', editable=True)
+	# slug=AutoSlugField(unique=True, populate_from='nombre', editable=True)
 	descripcion=models.TextField(blank=False)
 	imagen=models.ImageField(upload_to='recetas')
 	calorias=models.CharField(max_length=255)
