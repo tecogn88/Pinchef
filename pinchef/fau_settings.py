@@ -66,7 +66,7 @@ DATABASES = {
         'STORAGE_ENGINE': 'MyISAM / INNODB / ETC',
         'NAME': 'pinchef',
         'USER': 'root',
-        'PASSWORD': 'fau',
+        'PASSWORD': 'newemage',
         'HOST': '',
         'OPTIONS': {
             'read_default_file': '/path/to/my.cnf',

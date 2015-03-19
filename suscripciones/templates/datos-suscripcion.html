@@ -9,50 +9,87 @@
 						<div class="col-xs-6">
 							<b>Tarjetahabiente:</b> {{suscripcion_conekta.name}} <br>
 							<b>Tarjeta:</b> xxxx xxxx xxxx {{suscripcion_conekta.card.last4}}  <b>{{suscripcion_conekta.card.brand}}</b><br>
-							<b>Expiracion:</b> {{suscripcion_conekta.card.exp_month}}/{{suscripcion_conekta.card.exp_year}}
+							<b>Expiracion:</b> {{suscripcion_conekta.card.exp_month}}/{{suscripcion_conekta.card.exp_year}} <br>
+							<b>Estatus:</b> {{suscripcion_conekta.status|capfirst}}
 							<hr>
-							<button class="btn btn-lg btn-warning pull-right" id="btn-cambiar-tarjeta">Cambiar tarjeta</button>
-						</div>	
-					</div>
-					<div class="row">
+							{% if suscripcion_conekta.status != 'canceled' %}
+								<button class="btn btn-lg btn-warning pull-right" id="btn-cambiar-tarjeta">Cambiar tarjeta</button>
+							{% endif %}
+						</div>
 						<div class="col-xs-6">
-							<form action="" method="POST" role="form" id="card-form" class="hidden">
-								{% csrf_token %}
-								<legend>Card Form</legend>
+							<div id="error-cambio-estado" style="display:none">
+								<div class="alert alert-danger">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+									<span></span>
+								</div>
+							</div>
+							<div id="mensaje-cambio-estado" style="display:none">
+								<div class="alert alert-success">
+									<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+									<span></span>
+								</div>
+							</div>
+							{% if suscripcion_conekta.status != 'canceled' %}
 								<div class="row">
-									<span class="card-errors alert alert-danger" role="alert"></span>
+									{% if suscripcion.status == 'paused' %}
+										<button role="button" id="btn-reanudar-suscripcion" class="btn btn-lg btn-success">Reanudar suscripción</button>
+										{% else %}
+										<button role="button" id="btn-suspender-suscripcion" class="btn btn-lg btn-primary">Suspender suscripción</button>
+									{% endif %}
 								</div>
-								<div class="form-row row">
-								<label>
-								  <span>Nombre del tarjetahabiente</span>
-								  <input type="text" size="20" data-conekta="card[name]"/>
-								</label>
+								<div class="row margin-top">
+									{% if suscripcion.status != 'canceled' %}
+										<button role="button" id="btn-cancelar-suscripcion" class="btn btn-lg btn-danger">Cancelar suscripción</button>
+									{% endif %}
 								</div>
-								<div class="form-row row">
-								<label>
-								  <span>Número de tarjeta de crédito</span>
-								  <input type="text" size="20" data-conekta="card[number]"/>
-								</label>
+							{% else %}
+								<div class="row">
+									<div class="text-center">Suscripción cancelada!</div>
 								</div>
-								<div class="form-row row">
-								<label>
-								  <span>CVC</span>
-								  <input type="text" size="4" data-conekta="card[cvc]"/>
-								</label>
-								</div>
-								<div class="form-row row">
-								<label>
-								  <span>Fecha de expiración (MM/AAAA)</span>
-								  <input type="text" size="2" data-conekta="card[exp_month]"/>
-								</label>
-								<span>/</span>
-								<input type="text" size="4" data-conekta="card[exp_year]"/>
-								</div>
-								<button class="btn btn-danger" id="btn-cancelar-cambiar-tarjeta">Cancelar</button>
-								<button type="submit" class="btn-success pull-right btn">Cambiar ahora!</button>
-							</form>
+							{% endif %}
 						</div>
 					</div>
+					{% if suscripcion_conekta.status != 'canceled' %}
+						<div class="row">
+							<div class="col-xs-6">
+								<form action="" method="POST" role="form" id="card-form" class="hidden">
+									{% csrf_token %}
+									<legend>Card Form</legend>
+									<div class="row">
+										<span class="card-errors alert alert-danger" role="alert"></span>
+									</div>
+									<div class="form-row row">
+									<label>
+									  <span>Nombre del tarjetahabiente</span>
+									  <input type="text" size="20" data-conekta="card[name]"/>
+									</label>
+									</div>
+									<div class="form-row row">
+									<label>
+									  <span>Número de tarjeta de crédito</span>
+									  <input type="text" size="20" data-conekta="card[number]"/>
+									</label>
+									</div>
+									<div class="form-row row">
+									<label>
+									  <span>CVC</span>
+									  <input type="text" size="4" data-conekta="card[cvc]"/>
+									</label>
+									</div>
+									<div class="form-row row">
+									<label>
+									  <span>Fecha de expiración (MM/AAAA)</span>
+									  <input type="text" size="2" data-conekta="card[exp_month]"/>
+									</label>
+									<span>/</span>
+									<input type="text" size="4" data-conekta="card[exp_year]"/>
+									</div>
+									<button type="reset" class="btn btn-danger" id="btn-cancelar-cambiar-tarjeta">Cancelar</button>
+									<button type="submit" class="btn-success pull-right btn">Cambiar ahora!</button>
+								</form>
+							</div>
+						</div>
+					{% endif %}
 
 				</div>
 			</div>
@@ -101,6 +138,7 @@
 	/* Muestra los errores en la forma */
 
 	  $form.find(".card-errors").text(response.message);
+	  $(".card-errors").removeClass('hidden');
 	  $form.find("button").prop("disabled", false);
 	};
 	 // ...
@@ -119,6 +157,84 @@
 	/* Previene que la información de la forma sea enviada al servidor */
 	    return false;
 	  });
+	});
+
+	$(function(){
+		$("#btn-suspender-suscripcion").on("click", function(){
+			$(this).prop('disabled', true);
+			$.ajax({
+				url: '/suscripciones/suspender/',
+				type: 'POST',
+				dataType: 'json',
+				data: {csrfmiddlewaretoken: '{{csrf_token}}'},
+			})
+			.done(function(data) {
+				if (data.exito){
+					$("#mensaje-cambio-estado span").html(data.mensaje);
+					$("#mensaje-cambio-estado").fadeIn();
+				}else{
+					$("#error-cambio-estado span").html(data.mensaje);
+					$("#error-cambio-estado").fadeIn();
+				}
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+		});
+		$("#btn-reanudar-suscripcion").on("click", function(){
+			$(this).prop('disabled', true);
+			$.ajax({
+				url: '/suscripciones/reanudar/',
+				type: 'POST',
+				dataType: 'json',
+				data: {csrfmiddlewaretoken: '{{csrf_token}}'},
+			})
+			.done(function(data) {
+				if (data.exito){
+					$("#mensaje-cambio-estado span").html(data.mensaje);
+					$("#mensaje-cambio-estado").fadeIn();
+				}else{
+					$("#error-cambio-estado span").html(data.mensaje);
+					$("#error-cambio-estado").fadeIn();
+				}
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+		});
+		$("#btn-cancelar-suscripcion").on("click", function(){
+			$(this).prop('disabled', true);
+			$.ajax({
+				url: '/suscripciones/cancelar/',
+				type: 'POST',
+				dataType: 'json',
+				data: {csrfmiddlewaretoken: '{{csrf_token}}'},
+			})
+			.done(function(data) {
+				if (data.exito){
+					$("#mensaje-cambio-estado span").html(data.mensaje);
+					$("#mensaje-cambio-estado").fadeIn();
+				}else{
+					$("#error-cambio-estado span").html(data.mensaje);
+					$("#error-cambio-estado").fadeIn();
+				}
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+		});
 	});
 
 	</script>

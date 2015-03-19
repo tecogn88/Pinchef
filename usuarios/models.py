@@ -43,3 +43,15 @@ class Preferencia(models.Model):
 	alimentacion=models.CharField(max_length=100, choices=TYPE_CHOICES, default='ninguno')
 	restriccion=models.TextField(blank=True)
 	usuario=models.OneToOneField(User)
+
+
+from suscripciones.models import Suscripcion
+def suscripcion_activa(self):
+	suscripciones = self.suscripciones.all()
+	if suscripciones.count() > 0:
+		last_suscripcion = suscripciones.last()
+		if last_suscripcion.activo:
+			return True
+	return False
+
+User.add_to_class('suscripcion_activa',suscripcion_activa)
